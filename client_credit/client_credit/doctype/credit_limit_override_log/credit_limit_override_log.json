@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Other",
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_invoice",
+  "customer",
+  "company",
+  "column_break_3",
+  "overridden_by",
+  "overridden_on",
+  "section_break_6",
+  "reason",
+  "outstanding_amount",
+  "invoice_grand_total",
+  "column_break_10",
+  "credit_limit",
+  "grace_amount",
+  "effective_limit",
+  "column_break_14",
+  "worst_overdue_days",
+  "max_overdue_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overridden_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Overridden By",
+   "options": "User",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "overridden_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Overridden On",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Reason",
+   "options": "Amount Exceeded\nOverdue Invoice\nAmount Exceeded and Overdue",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount (incl. this invoice)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_grand_total",
+   "fieldtype": "Currency",
+   "label": "Invoice Grand Total (company currency)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Currency",
+   "label": "Credit Limit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grace_amount",
+   "fieldtype": "Currency",
+   "label": "Grace Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "effective_limit",
+   "fieldtype": "Currency",
+   "label": "Effective Limit (Credit Limit + Grace)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "worst_overdue_days",
+   "fieldtype": "Int",
+   "label": "Worst Overdue Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "max_overdue_days",
+   "fieldtype": "Int",
+   "label": "Max Overdue Days Allowed",
+   "read_only": 1
+  }
+ ],
+ "icon": "fa fa-shield",
+ "in_create": 1,
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "client credit",
+ "name": "Credit Limit Override Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager"
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "sales_invoice",
+ "track_changes": 1
+}

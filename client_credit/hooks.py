@@ -5,6 +5,29 @@ app_description = "client sells on credit"
 app_email = "Contact@enfono.com"
 app_license = "mit"
 
+required_apps = ["erpnext"]
+
+# Fixtures
+# --------
+# Custom Fields that add grace_amount/max_overdue_days to the existing
+# "Customer Credit Limit" child table (Customer, per Company).
+
+fixtures = [
+	{
+		"doctype": "Custom Field",
+		"filters": [
+			[
+				"name",
+				"in",
+				[
+					"Customer Credit Limit-custom_grace_amount",
+					"Customer Credit Limit-custom_max_overdue_days",
+				],
+			]
+		],
+	}
+]
+
 # Apps
 # ------------------
 
@@ -129,9 +152,9 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Sales Invoice": "client_credit.overrides.sales_invoice.ClientCreditSalesInvoice"
+}
 
 # Document Events
 # ---------------
